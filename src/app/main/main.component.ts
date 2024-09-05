@@ -15,6 +15,29 @@ import { BioComponent } from '../bio/bio.component';
 
 export class MainComponent {
   title = 'Bill Gates';
+  showSection: 'quotes' | 'bio' | 'links' | 'all' | 'none' = 'all';
 
-  
+  showQuotes() {
+    this.showSection = 'quotes';
+  }
+
+  showBio() {
+    this.showSection = 'bio';
+  }
+
+  showLinks() {
+    this.showSection = 'links';
+  }
+
+  showAll() {
+    this.showSection = 'all';
+  }
+
+  hideAll() {
+    this.showSection = 'none';
+  }
+
+  isSectionVisible(section: 'quotes' | 'bio' | 'links'): boolean {
+    return this.showSection === 'all' || this.showSection === section;
+  }
 }

@@ -1,14 +1,14 @@
 <header>
-  <a>Show All</a>
-  <a>Show Bio</a>
-  <a>Show Qoutes</a>
-  <a>Show Links</a>
-  <a>Hide All</a>
+  <a (click)="showAll()">Show All</a>
+  <a (click)="showBio()">Show Bio</a>
+  <a (click)="showQuotes()">Show Quotes</a>
+  <a (click)="showLinks()">Show Links</a>
+  <a (click)="hideAll()">Hide All</a>
 </header>
 
 <main>
   <div class="article">
-    <section class="info">
+    <section *ngIf="isSectionVisible('quotes')" class="info">
       <h1>{{title}}</h1>
       <img src="portrait.jpg" class="portrait">
       <div class="quotes">
@@ -16,13 +16,13 @@
       </div>
     </section>
 
-    <section class="bio">
+    <section *ngIf="isSectionVisible('bio')" class="bio">
       <app-bio></app-bio>
     </section>
   </div>
 
-  <div class="refferences">
-    <section class="content">
+  <div class="references">
+    <section *ngIf="isSectionVisible('links')" class="content">
       <app-link-list></app-link-list>
     </section>
   </div>
