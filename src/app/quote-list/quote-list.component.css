@@ -1,0 +1,56 @@
+.quotes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #192236;
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 1rem;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #ffffff50;
+    border-radius: 1rem;
+    background-color: #ffffff99;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.button-group {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input {
+    text-align: center;
+    width: 100%;
+    padding: .4rem;
+    border-radius: 1rem;
+    background-color: #192236;
+    color: #ffffff;
+}

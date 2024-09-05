@@ -1,25 +1,17 @@
-<main>
-  <div class="article">
-    <section class="info">
-      <h1>Bill Gates</h1>
-      <img src="portrait.jpg"
-        class="portrait">
-      <div class="quotes">
-        <h2>Quotes</h2>
-        <ul>
-          <li>«Patience is a key element of success»</li>
-          <li>«If you think your teacher is tough, wait till you get a boss»</li>
-          <li>«Life is not fair — get used to it!»</li>
-          <li>«Success is a lousy teacher. It seduces smart people into thinking they can’t lose»</li>
-          <li>«Be nice to nerds. Chances are you’ll end up working for one»</li>
-        </ul>
-      </div>
-    </section>
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-    <section class="bio">
-      <h2>Biography</h2>
-      <p>
-        William Henry Gates III (born October 28, 1955) is an American business magnate best known for co-founding the
+@Component({
+  selector: 'app-bio',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './bio.component.html',
+  styleUrl: './bio.component.css'
+})
+
+export class BioComponent {
+  @Input() biography = `William Henry Gates III (born October 28, 1955) is an American business magnate best known for co-founding the
         software
         company Microsoft with his childhood friend Paul Allen. During his career at Microsoft, Gates held the positions
         of chairman,
@@ -64,25 +56,5 @@
         Africa. In 2010, Gates and Warren Buffett founded the Giving Pledge, whereby they and other billionaires pledge
         to
         give at least
-        half of their wealth towards philanthropy.
-      </p>
-    </section>
-  </div>
-
-  <div class="refferences">
-    <section class="content">
-      <a href="https://en.wikipedia.org/wiki/Bill_Gates" target="_blank">
-        <img src="wikipedia.png" class="icon">
-      </a>
-      <a href="https://www.gatesfoundation.org/" target="_blank">
-        <img src="gates_foundation.png" class="icon">
-      </a>
-      <a href="https://www.gatesnotes.com/" target="_blank">
-        <img src="gates_notes.png" class="icon">
-      </a>
-      <a href="https://x.com/billgates?mx=2" target="_blank">
-        <img src="twitter.png" class="icon">
-      </a>
-    </section>
-  </div>
-</main>
+        half of their wealth towards philanthropy.`;
+}
