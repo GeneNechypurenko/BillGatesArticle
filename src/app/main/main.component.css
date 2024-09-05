@@ -89,3 +89,35 @@ h1 {
     background-color: #ffffff20;
     padding: 2rem;
 }
+
+header {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border: 2px solid #ffffff50;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: #ffffff99;
+    gap: 10px;
+}
+
+a {
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    font-weight: normal;
+    transition: .2s ease-in-out;
+    padding: .5rem;
+}
+
+a:hover {
+    font-weight: bold;
+    background-color: #192236;
+    color: #ffffff;
+    padding: .5rem;
+    border-radius: .5rem;
+}
