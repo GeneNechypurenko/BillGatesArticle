@@ -9,7 +9,7 @@
 <main>
   <div class="article">
     <section *ngIf="isSectionVisible('quotes')" class="info">
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       <img src="portrait.jpg" class="portrait">
       <div class="quotes">
         <app-quote-list></app-quote-list>
@@ -27,3 +27,14 @@
     </section>
   </div>
 </main>
+
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <h2>Select Background</h2>
+    <div class="background-options">
+      <img *ngFor="let background of backgrounds" 
+           [src]="background.fileName" 
+           (click)="setBackground(background.fileName)">
+    </div>
+  </div>
+</div>

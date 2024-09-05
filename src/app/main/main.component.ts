@@ -12,32 +12,29 @@ import { BioComponent } from '../bio/bio.component';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-
 export class MainComponent {
   title = 'Bill Gates';
   showSection: 'quotes' | 'bio' | 'links' | 'all' | 'none' = 'all';
+  showModal: boolean = true;
 
-  showQuotes() {
-    this.showSection = 'quotes';
-  }
+  backgrounds = [
+    { fileName: 'background.jpeg' },
+    { fileName: 'abstract.jpg' },
+    { fileName: 'microsoft-logo.jpeg' }
+  ];
 
-  showBio() {
-    this.showSection = 'bio';
-  }
-
-  showLinks() {
-    this.showSection = 'links';
-  }
-
-  showAll() {
-    this.showSection = 'all';
-  }
-
-  hideAll() {
-    this.showSection = 'none';
-  }
+  showQuotes() { this.showSection = 'quotes'; }
+  showBio() { this.showSection = 'bio'; }
+  showLinks() { this.showSection = 'links'; }
+  showAll() { this.showSection = 'all'; }
+  hideAll() { this.showSection = 'none'; }
 
   isSectionVisible(section: 'quotes' | 'bio' | 'links'): boolean {
     return this.showSection === 'all' || this.showSection === section;
+  }
+
+  setBackground(imageName: string) {
+    document.body.style.backgroundImage = `url(${imageName})`;
+    this.showModal = false;
   }
 }
