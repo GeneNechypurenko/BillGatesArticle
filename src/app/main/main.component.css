@@ -51,6 +51,10 @@ h1 {
     object-fit: cover;
 }
 
+.portrait:hover {
+    animation: flip 1s;
+}
+
 .quotes {
     width: 100%;
     display: flex;

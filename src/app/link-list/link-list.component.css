@@ -24,7 +24,7 @@ a {
     gap: 10px;
 }
 
-links {
+.links {
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -35,6 +35,12 @@ links {
     align-items: center;
     align-content: center;
     justify-content: center;
+    outline: #192236 2px solid;
+    border-radius: 50%;
+}
+
+.links:hover {
+    animation: rotateOut 1s;
 }
 
 p {
