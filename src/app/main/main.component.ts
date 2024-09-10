@@ -61,7 +61,6 @@ export class MainComponent {
     }
   }
 
-
   // For Links Template:
 
   @ViewChild(LinkListComponent) linkListComponent!: LinkListComponent;
