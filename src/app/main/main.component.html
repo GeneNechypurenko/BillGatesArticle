@@ -12,7 +12,22 @@
       <h1>{{ title }}</h1>
       <img src="portrait.jpg" class="portrait">
       <div class="quotes">
+
         <app-quote-list></app-quote-list>
+
+        <button (click)="toggleInputs()" (mouseenter)="isHoveredPlus = true" (mouseleave)="isHoveredPlus = false">
+          <i *ngIf="!isHoveredPlus" class="fa-solid fa-circle-plus fa-lg" style="color: #192236"></i>
+          <i *ngIf="isHoveredPlus" class="fa-solid fa-circle-plus fa-lg fa-beat" style="color: #192236;"></i>
+        </button>
+
+        <div class="button-group" *ngIf="showInputs">
+          <input class="quote-input" [(ngModel)]="newQuote" placeholder="@quote" />
+          <button (click)="addQuote()" (mouseenter)="isHoveredCheck = true" (mouseleave)="isHoveredCheck = false">
+            <i *ngIf="!isHoveredCheck" class="fa-solid fa-circle-check fa-lg" style="color: #192236"></i>
+            <i *ngIf="isHoveredCheck" class="fa-solid fa-circle-check fa-shake fa-lg" style="color: #192236"></i>
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -23,7 +38,32 @@
 
   <div class="references">
     <section *ngIf="isSectionVisible('links')" class="content">
+
       <app-link-list></app-link-list>
+
+      <div class="extend">
+        <div class="input-group">
+          <select [(ngModel)]="newLinkIcon">
+            <option value="fa-brands fa-wikipedia-w fa-xl">Wikipedia</option>
+            <option value="fa-brands fa-square-x-twitter fa-xl">Twitter</option>
+            <option value="fa-brands fa-square-instagram fa-xl">Instagram</option>
+            <option value="fa-brands fa-square-facebook fa-xl">Facebook</option>
+            <option value="fa-brands fa-telegram fa-xl">Telegram</option>
+            <option value="fa-solid fa-blog fa-xl">Blog</option>
+            <option value="fa-solid fa-hand-holding-heart fa-xl">Charity</option>
+            <option value="fa-brands fa-microsoft fa-xl">Bussiness</option>
+            <option value="fa-solid fa-newspaper fa-xl">Article</option>
+            <option value="fa-solid fa-circle-info fa-xl">Info</option>
+          </select>
+
+          <input class="link-input" [(ngModel)]="newLinkTitle" placeholder="@title" />
+          <input class="link-input" [(ngModel)]="newLinkUrl" placeholder="@url" />
+          <button (click)="addLink()" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+            <i *ngIf="!isHovered" class="fa-solid fa-circle-check fa-lg" style="color: #192236"></i>
+            <i *ngIf="isHovered" class="fa-solid fa-circle-check fa-shake fa-lg" style="color: #192236"></i>
+          </button>
+        </div>
+      </div>
     </section>
   </div>
 </main>
@@ -32,9 +72,8 @@
   <div class="modal-content">
     <h2>Select Background</h2>
     <div class="background-options">
-      <img *ngFor="let background of backgrounds" 
-           [src]="background.fileName" 
-           (click)="setBackground(background.fileName)">
+      <img *ngFor="let background of backgrounds" [src]="background.fileName"
+        (click)="setBackground(background.fileName)">
     </div>
   </div>
 </div>

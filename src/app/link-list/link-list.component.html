@@ -4,27 +4,3 @@
     <p>{{link.title}}</p>
   </a>
 </div>
-
-<div class="extend">
-  <div class="input-group">
-    <select [(ngModel)]="newLinkIcon">
-      <option value="fa-brands fa-wikipedia-w fa-xl">Wikipedia</option>
-      <option value="fa-brands fa-square-x-twitter fa-xl">Twitter</option>
-      <option value="fa-brands fa-square-instagram fa-xl">Instagram</option>
-      <option value="fa-brands fa-square-facebook fa-xl">Facebook</option>
-      <option value="fa-brands fa-telegram fa-xl">Telegram</option>
-      <option value="fa-solid fa-blog fa-xl">Blog</option>
-      <option value="fa-solid fa-hand-holding-heart fa-xl">Charity</option>
-      <option value="fa-brands fa-microsoft fa-xl">Bussiness</option>
-      <option value="fa-solid fa-newspaper fa-xl">Article</option>
-      <option value="fa-solid fa-circle-info fa-xl">Info</option>
-    </select>
-
-    <input [(ngModel)]="newLinkTitle" placeholder="@title" />
-    <input [(ngModel)]="newLinkUrl" placeholder="@url" />
-    <button (click)="addLink()" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
-      <i *ngIf="!isHovered" class="fa-solid fa-circle-check fa-lg" style="color: #192236"></i>
-      <i *ngIf="isHovered" class="fa-solid fa-circle-check fa-shake fa-lg" style="color: #192236"></i>
-    </button>
-  </div>
-</div>

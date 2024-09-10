@@ -1,17 +1,17 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-quote-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NgFor],
   templateUrl: './quote-list.component.html',
   styleUrls: ['./quote-list.component.css']
 })
 export class QuoteListComponent {
 
-  @Input() quotes = [
+  quotes = [
     '«Patience is a key element of success»',
     '«If you think your teacher is tough, wait till you get a boss»',
     '«Life is not fair — get used to it!»',
@@ -19,21 +19,8 @@ export class QuoteListComponent {
     '«Be nice to nerds. Chances are you’ll end up working for one»'
   ];
 
-  newQuote = '';
-
-  addQuote() {
-    if (this.newQuote) {
-      this.quotes.push(this.newQuote);
-      this.newQuote = '';
-    }
-  }
-
-  isHoveredPlus = false;
-  isHoveredCheck = false;
-  
-  showInputs = false;
-
-  toggleInputs() {
-    this.showInputs = !this.showInputs;
+  addNewQuote(newQuote: string) {
+    this.quotes.push(newQuote);
+    console.log(this.quotes);
   }
 }
